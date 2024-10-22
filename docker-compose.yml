@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: nestjs-app
+    ports:
+      - '3000:3000' # Puerto de la aplicación
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/taller1  # Conexión a la base de datos MongoDB
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run start:prod # Comando para iniciar la aplicación en modo producción
+
+  mongo:
+    image: mongo:latest  # Imagen oficial de MongoDB
+    container_name: mongodb
+    ports:
+      - '27017:27017'  # Puerto de MongoDB
+    volumes:
+      - ./mongo-data:/data/db  # Volumen persistente para los datos de MongoDB

@@ -17,7 +17,10 @@ let CursosModule = class CursosModule {
 exports.CursosModule = CursosModule;
 exports.CursosModule = CursosModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forRoot('mongodb://localhost/taller1'), mongoose_1.MongooseModule.forFeature([{ name: cursos_schema_1.Curso.name, schema: cursos_schema_1.CursoSchema }])],
+        imports: [
+            mongoose_1.MongooseModule.forRoot(process.env.MONGO_URI),
+            mongoose_1.MongooseModule.forFeature([{ name: cursos_schema_1.Curso.name, schema: cursos_schema_1.CursoSchema }])
+        ],
         controllers: [cursos_controller_1.CursosController],
         providers: [cursos_service_1.CursosService],
     })

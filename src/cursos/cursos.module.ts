@@ -5,7 +5,10 @@ import { CursosController } from './cursos.controller';
 import { Curso, CursoSchema } from './schemas/cursos.schema';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/taller1'), MongooseModule.forFeature([{ name: Curso.name, schema: CursoSchema }])],
+  imports: [
+    MongooseModule.forRoot(process.env.MONGO_URI), // Conexión con variable de entorno
+    MongooseModule.forFeature([{ name: Curso.name, schema: CursoSchema }])
+  ],
   controllers: [CursosController],
   providers: [CursosService],
 })
