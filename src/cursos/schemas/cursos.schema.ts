@@ -9,6 +9,9 @@ export class Curso extends Document {
   nombre: string;
 
   @Prop()
+  id: string;
+
+  @Prop()
   descripcion: string;
 
   @Prop()
