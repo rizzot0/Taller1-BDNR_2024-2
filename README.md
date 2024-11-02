@@ -21,13 +21,15 @@ Asegúrate de tener instaladas las siguientes herramientas antes de ejecutar la 
 - Descargar el repositorio y extraerlo.
 - Abrir la carpeta del proyecto en Visual Studio
 - Ejecutar el siguiente comando para ejecutar la aplicación
-- 
+  
 ```
   npm install
   npm run start:dev
 ```
+- En MongoDB Compass se podra visualizar que se crea en el puerto 27017 (Puerto local determinado de mongo) una base de datos denominada **taller1BD** con las colecciones **clases, comentarios, cursos y unidades**
+- Utilizando **ThunderClient** se utiliza el puerto **3000** (Puerto determinado para las aplicaciones en nestjs) probando las distintos endpoints configurados para la aplicacion explicados a continuación. 
 
-## Acceso a la aplicación
+## Endpoints
 ### -Aplicación principal: http://localhost:3000 
 ### -Endpoint para gestión de cursos: http://localhost:3000/cursos
 ### -Endpoint para gestión de unidades: http://localhost:3000/unidades
