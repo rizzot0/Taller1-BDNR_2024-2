@@ -21,8 +21,8 @@ Asegúrate de tener instaladas las siguientes herramientas antes de ejecutar la 
 - Descargar el repositorio y extraerlo.
 - Abrir la carpeta del proyecto en Visual Studio
 - Ejecutar el siguiente comando para ejecutar la aplicación
+- 
 ```
-{
   npm install
   npm run start:dev
 ```
