@@ -12,6 +12,7 @@ Asegúrate de tener instaladas las siguientes herramientas antes de ejecutar la 
 
 ### -Node.js (versión 18 o superior)
 ### -MongoDB Compass
+### -Thunder Cliente (Extension de Visual Studio Code para ver los distintos request)
 
 ## Instalación
 
@@ -30,17 +31,17 @@ Descargar el repositorio y extraerlo.
 ### 4.1 Gestión de Cursos
 
 #### a) Obtener todos los cursos
-Verbo HTTP: GET Ruta: /cursos
-Descripción: Devuelve un listado de todos los cursos disponibles, mostrando el nombre, imagen, descripción, y valoración de cada curso.
+- Verbo HTTP: GET Ruta: /cursos
+- Descripción: Devuelve un listado de todos los cursos disponibles, mostrando el nombre, imagen, descripción, y valoración de cada curso.
 
 #### b) Obtener detalles de un curso
-Verbo HTTP: GET Ruta: /cursos/:id 
-Parámetros: id (ID del curso) 
-Descripción: Devuelve los detalles completos de un curso específico, incluyendo unidades, clases, usuarios inscritos, comentarios y valoración.
+- Verbo HTTP: GET Ruta: /cursos/:id
+- Parámetros: id (ID del curso)
+- Descripción: Devuelve los detalles completos de un curso específico, incluyendo unidades, clases, usuarios inscritos, comentarios y valoración.
 
 #### c) Crear un curso nuevo
-Verbo HTTP: POST Ruta: /cursos
-Parámetros en el Body (JSON):
+- Verbo HTTP: POST Ruta: /cursos
+- Parámetros en el Body (JSON):
 
 ```
 {
@@ -55,20 +56,20 @@ Parámetros en el Body (JSON):
 ```
 
 #### d) Actualizar un curso
-Verbo HTTP: PUT Ruta: /cursos/:id 
-Parámetros: id (ID del curso a actualizar) 
-Descripción: Actualiza los detalles de un curso específico.
+- Verbo HTTP: PUT Ruta: /cursos/:id 
+- Parámetros: id (ID del curso a actualizar) 
+- Descripción: Actualiza los detalles de un curso específico.
 
 
 #### e) Eliminar un curso
-Verbo HTTP: DELETE Ruta: /cursos/:id
-Parámetros: id (ID del curso) 
-Descripción: Elimina un curso y toda su información de la plataforma.
+- Verbo HTTP: DELETE Ruta: /cursos/:id
+- Parámetros: id (ID del curso) 
+- Descripción: Elimina un curso y toda su información de la plataforma.
 
 ### 4.2 Gestión de Unidades
 #### a) Agregar una unidad a un curso
-Verbo HTTP: POST Ruta: /unidades
-
+- Verbo HTTP: POST Ruta: /unidades
+- Descripción: Permite agregar una nueva unidad a un curso.
 ```
 {
   "nombre": String,
@@ -78,17 +79,17 @@ Verbo HTTP: POST Ruta: /unidades
 }
 
 ```
-Descripción: Permite agregar una nueva unidad a un curso.
+
 
 #### b) Eliminar una unidad de un curso
-Verbo HTTP: DELETE Ruta: /unidades/:idUnidad
-Parámetros: unidadId: ID de la unidad a eliminar.
-Descripción: Elimina una unidad de un curso específico.
+- Verbo HTTP: DELETE Ruta: /unidades/:idUnidad
+- Parámetros: unidadId: ID de la unidad a eliminar.
+- Descripción: Elimina una unidad de un curso específico.
 
 ### 4.3 Gestión de Clases
 #### a) Agregar una clase a una unidad
-Verbo HTTP: POST Ruta: /clases
-Body (JSON):
+- Verbo HTTP: POST Ruta: /clases
+- Body (JSON):
 
 ```
 {
@@ -113,14 +114,14 @@ Body (JSON):
 Descripción: Agrega una clase nueva a una unidad específica dentro de un curso.
 
 #### b) Eliminar una clase de una unidad
-Verbo HTTP: DELETE Ruta: /clase/:id
-Parámetros:  unidadId: ID de la unidad. 
-Descripción: Elimina una clase específica de una unidad en un curso.
+- Verbo HTTP: DELETE Ruta: /clase/:id
+- Parámetros:  unidadId: ID de la unidad. 
+- Descripción: Elimina una clase específica de una unidad en un curso.
 
 ### 4.4 Gestión de Comentarios
 #### a) Agregar un comentario a un curso o a una clase
-Verbo HTTP: POST Ruta: /comentarios
-Body (JSON):
+- Verbo HTTP: POST Ruta: /comentarios
+- Body (JSON):
 
 ```
 {
@@ -133,6 +134,6 @@ Body (JSON):
 ```
 
 #### b) Eliminar un comentario 
-Verbo HTTP: POST Ruta: /comentarios/:id
-Descripcion: Eliminar un comentario con su id correspondiente
+- Verbo HTTP: POST Ruta: /comentarios/:id
+- Descripcion: Eliminar un comentario con su id correspondiente
 
