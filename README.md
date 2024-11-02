@@ -12,11 +12,20 @@ Asegúrate de tener instaladas las siguientes herramientas antes de ejecutar la 
 
 ### -Node.js (versión 18 o superior)
 ### -MongoDB Compass
+### -Visual Studio Code
 ### -Thunder Cliente (Extension de Visual Studio Code para ver los distintos request)
+
 
 ## Instalación
 
-Descargar el repositorio y extraerlo.
+- Descargar el repositorio y extraerlo.
+- Abrir la carpeta del proyecto en Visual Studio
+- Ejecutar el siguiente comando para ejecutar la aplicación
+```
+{
+  npm install
+  npm run start:dev
+```
 
 ## Acceso a la aplicación
 ### -Aplicación principal: http://localhost:3000 
