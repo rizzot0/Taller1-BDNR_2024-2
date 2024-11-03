@@ -11,5 +11,5 @@ export class CreateUnidadDto {
 
   @IsString()
   @IsNotEmpty()
-  idCurso: string; // Agregamos el ID del curso al que pertenece la unidad
+  idCurso: string; 
 }

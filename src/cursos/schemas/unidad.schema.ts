@@ -10,7 +10,7 @@ export class Unidad extends Document {
   @Prop({ required: true })
   numero_orden: number;
 
-  @Prop({ type: Types.ObjectId, ref: 'Curso', required: true }) // Nuevo campo para asociar al curso
+  @Prop({ type: Types.ObjectId, ref: 'Curso', required: true }) 
   idCurso: Types.ObjectId;
 
   @Prop({ type: [{ type: Types.ObjectId, ref: 'Clase' }] })

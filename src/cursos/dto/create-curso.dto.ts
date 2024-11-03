@@ -1,4 +1,3 @@
-// dto/create-curso.dto.ts
 import { IsString, IsOptional, IsArray } from 'class-validator';
 
 export class CreateCursoDto {
@@ -19,5 +18,5 @@ export class CreateCursoDto {
 
   @IsOptional()
   @IsArray()
-  readonly unidades?: string[]; // Array de IDs de unidades relacionadas
+  readonly unidades?: string[]; 
 }

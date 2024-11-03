@@ -1,4 +1,3 @@
-// create-clase.dto.ts
 import { IsString, IsNotEmpty } from 'class-validator';
 
 export class CreateClaseDto {

@@ -1,4 +1,3 @@
-// cursos.module.ts
 import { Module, forwardRef } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Curso, CursoSchema } from './schemas/curso.schema';
@@ -11,7 +10,7 @@ import { ComentariosModule } from './comentarios.module';
   imports: [
     MongooseModule.forFeature([{ name: Curso.name, schema: CursoSchema }]),
     forwardRef(() => UnidadesModule),
-    forwardRef(() => ComentariosModule), // Usa forwardRef para ComentariosModule
+    forwardRef(() => ComentariosModule), 
   ],
   controllers: [CursosController],
   providers: [CursosService],

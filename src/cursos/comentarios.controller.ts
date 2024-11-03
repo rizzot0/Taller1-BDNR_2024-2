@@ -1,4 +1,3 @@
-// src/cursos/comentarios.controller.ts
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { ComentariosService } from './comentarios.service';
 import { CreateComentarioDto } from './dto/create-comentario.dto';

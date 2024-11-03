@@ -1,4 +1,3 @@
-// create-comentario.dto.ts
 import { IsString, IsNotEmpty } from 'class-validator';
 
 export class CreateComentarioDto {
@@ -19,5 +18,5 @@ export class CreateComentarioDto {
 
   @IsString()
   @IsNotEmpty()
-  idrelacion: string; // Agrega la propiedad idrelacion
+  idrelacion: string; 
 }

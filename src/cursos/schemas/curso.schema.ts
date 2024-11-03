@@ -1,6 +1,6 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { Comentario } from './comentario.schema'; // Importa el esquema de Comentario si es necesario
+import { Comentario } from './comentario.schema';
 
 @Schema()
 export class Curso extends Document {

@@ -1,4 +1,3 @@
-// unidades.service.ts
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
@@ -13,21 +12,20 @@ export class UnidadesService {
     @InjectModel(Curso.name) private readonly cursoModel: Model<Curso>,
   ) {}
 
-// unidades.service.ts
+// Crear una nueva unidad
 async create(createUnidadDto: CreateUnidadDto): Promise<Unidad> {
   const newUnidad = new this.unidadModel({
     ...createUnidadDto,
-    idCurso: new Types.ObjectId(createUnidadDto.idCurso), // Asignar idCurso como ObjectId
+    idCurso: new Types.ObjectId(createUnidadDto.idCurso), // Asegura que idCurso es de tipo ObjectId
   });
   await newUnidad.save();
 
-  // Añadir el ID de la nueva unidad al curso correspondiente
   await this.addUnidadToCurso(new Types.ObjectId(createUnidadDto.idCurso), newUnidad._id as Types.ObjectId);
   return newUnidad;
 }
 
   
-
+  // Método para añadir una unidad a un curso
   async addUnidadToCurso(cursoId: Types.ObjectId, unidadId: Types.ObjectId): Promise<void> {
     const curso = await this.cursoModel.findById(cursoId);
     if (!curso) {
@@ -38,11 +36,12 @@ async create(createUnidadDto: CreateUnidadDto): Promise<Unidad> {
   }
   
 
-  // Otros métodos del servicio
+  // Listar todas las unidades
   async findAll(): Promise<Unidad[]> {
     return this.unidadModel.find().exec();
   }
 
+  // Buscar una unidad por ID
   async findOne(id: string): Promise<Unidad> {
     const unidad = await this.unidadModel.findById(id).exec();
     if (!unidad) {
@@ -51,6 +50,7 @@ async create(createUnidadDto: CreateUnidadDto): Promise<Unidad> {
     return unidad;
   }
 
+  // Actualizar una unidad
   async update(id: string, updateUnidadDto: CreateUnidadDto): Promise<Unidad> {
     const updatedUnidad = await this.unidadModel
       .findByIdAndUpdate(id, updateUnidadDto, { new: true })
@@ -61,6 +61,7 @@ async create(createUnidadDto: CreateUnidadDto): Promise<Unidad> {
     return updatedUnidad;
   }
 
+  // Eliminar una unidad
   async remove(id: string): Promise<void> {
     const result = await this.unidadModel.findByIdAndDelete(id).exec();
     if (!result) {
@@ -68,7 +69,7 @@ async create(createUnidadDto: CreateUnidadDto): Promise<Unidad> {
     }
   }
 
-// unidades.service.ts
+// Método para añadir una clase a una unidad
 async addClaseToUnidad(unidadId: Types.ObjectId, claseId: Types.ObjectId): Promise<void> {
   const unidad = await this.unidadModel.findById(unidadId);
   if (!unidad) {
@@ -80,7 +81,5 @@ async addClaseToUnidad(unidadId: Types.ObjectId, claseId: Types.ObjectId): Promi
     await unidad.save();
   }
 }
-
-
 
 }

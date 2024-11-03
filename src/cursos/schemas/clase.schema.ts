@@ -27,7 +27,7 @@ export class Clase extends Document {
   @Prop({ default: 0 })
   no_me_gusta: number;
 
-  @Prop({ type: Types.ObjectId, ref: 'Unidad', required: true }) // Nuevo campo para relacionar con Unidad
+  @Prop({ type: Types.ObjectId, ref: 'Unidad', required: true }) 
   idUnidad: Types.ObjectId;
 }
 

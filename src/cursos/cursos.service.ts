@@ -1,13 +1,12 @@
-// cursos.service.ts
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, Types } from 'mongoose';  // Importamos Types para ObjectId
+import { Model, Types } from 'mongoose';  
 import { CreateCursoDto } from './dto/create-curso.dto';
 import { Curso } from './schemas/curso.schema';
-import { Unidad } from './schemas/unidad.schema';  // Importamos Unidad
-import { Comentario } from './schemas/comentario.schema';  // Importamos Comentario
+import { Unidad } from './schemas/unidad.schema';  
+import { Comentario } from './schemas/comentario.schema';  
 
-@Injectable()
+@Injectable() 
 export class CursosService {
   constructor(
     @InjectModel(Curso.name) private readonly cursoModel: Model<Curso>,

@@ -4,8 +4,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ComentariosService } from './comentarios.service';
 import { ComentariosController } from './comentarios.controller';
 import { Comentario, ComentarioSchema } from './schemas/comentario.schema';
-import { CursosModule } from './cursos.module'; // Importa CursosModule
-import { Clase, ClaseSchema } from './schemas/clase.schema'; // Asegúrate de que Clase esté incluida
+import { CursosModule } from './cursos.module'; 
+import { Clase, ClaseSchema } from './schemas/clase.schema'; 
 
 @Module({
   imports: [
@@ -13,10 +13,10 @@ import { Clase, ClaseSchema } from './schemas/clase.schema'; // Asegúrate de qu
       { name: Comentario.name, schema: ComentarioSchema },
       { name: Clase.name, schema: ClaseSchema },
     ]),
-    forwardRef(() => CursosModule), // Usa forwardRef para CursosModule
+    forwardRef(() => CursosModule), 
   ],
   controllers: [ComentariosController],
   providers: [ComentariosService],
-  exports: [ComentariosService, MongooseModule], // Exporta ComentariosService y MongooseModule
+  exports: [ComentariosService, MongooseModule], 
 })
 export class ComentariosModule {}
