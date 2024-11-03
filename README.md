@@ -148,3 +148,63 @@ Descripción: Agrega una clase nueva a una unidad específica dentro de un curso
 - Verbo HTTP: POST Ruta: /comentarios/:id
 - Descripcion: Eliminar un comentario con su id correspondiente
 
+## JSON De prueba
+
+### Curso
+
+```
+{
+  "nombre": "Curso de Desarrollo Web",
+  "descripcion": "Curso avanzado sobre desarrollo web con tecnologías modernas.",
+  "imagen_portada": "http://example.com/imagen_portada.jpg",
+  "imagen_banner": "http://example.com/imagen_banner.jpg",
+  "valoracion": 5,
+  "unidades": [],  // Array inicializado vacío para unidades
+  "comentarios": []  // Array inicializado vacío para comentarios
+}
+```
+
+### Unidad
+
+```
+{
+  "nombre": "Unidad 1: Introducción a HTML",
+  "numero_orden": 1,
+  "idCurso": "ID_DEL_CURSO",  // ID del curso al que pertenece esta unidad
+  "clases": []  // Array inicializado vacío para clases
+}
+```
+
+### Clase
+
+```
+{
+  "nombre": "Clase 1: Conceptos básicos de HTML",
+  "descripcion": "Descripción sobre qué es HTML y cómo se estructura.",
+  "video_url": "http://example.com/video_html.mp4",
+  "contenido_descargable": [
+    {
+      "titulo": "Guía Rápida de HTML",
+      "url": "http://example.com/guia_html.pdf"
+    }
+  ],
+  "numero_orden": 1,
+  "idUnidad": "ID_DE_LA_UNIDAD",  // ID de la unidad a la que pertenece esta clase
+  "comentarios": [],  // Array inicializado vacío para comentarios
+  "me_gusta": 0,
+  "no_me_gusta": 0
+}
+```
+
+### Comentario
+
+```
+{
+  "nombre_autor": "Juan Perez",
+  "fecha": "2024-01-01T12:00:00Z",
+  "titulo": "Gran Curso",
+  "detalle": "Este curso me ayudó mucho a entender los conceptos básicos.",
+  "idrelacion": "ID_DEL_CURSO_O_CLASE"  // ID del curso o clase al que está relacionado este comentario
+}
+```
+
