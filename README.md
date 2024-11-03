@@ -136,11 +136,11 @@ Descripción: Agrega una clase nueva a una unidad específica dentro de un curso
 
 ```
 {
-  "nombre_autor": "Juan Perez",
-  "fecha": "2024-01-01T12:00:00Z",
-  "titulo": "Gran Curso",
-  "detalle": "Este curso me ayudó mucho a entender los conceptos básicos.",
-  "idrelacion": "ID_DEL_CURSO_O_CLASE"  // ID del curso o clase al que está relacionado este comentario
+  "nombre_autor": String,
+  "fecha": String,
+  "titulo": String,
+  "detalle": String,
+  "idrelacion": "ID_DEL_CURSO_O_CLASE"  // ID del curso o clase al que está relacionado este comentario, tipo String
 }
 ```
 
